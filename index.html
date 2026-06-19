@@ -49,7 +49,7 @@
 
   /* crest */
   .crest{ width:1em; height:1em; display:inline-block; vertical-align:middle; color:var(--brass); }
-  .crest path, .crest line{ stroke:var(--brass); stroke-width:5; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .crest path, .crest line, .crest circle{ stroke:var(--brass); stroke-width:2.4; fill:none; stroke-linecap:round; stroke-linejoin:round; }
 
   /* NAV */
   nav{ position:fixed; inset:0 0 auto 0; z-index:100; display:flex; align-items:center; justify-content:space-between;
@@ -195,26 +195,36 @@
 </head>
 <body>
 
-<!-- Reusable modern El Nido bird/nest mark -->
+<!-- Refined El Nido crest: filled bird descending to nest, leaf sprig, double-ring frame -->
 <svg width="0" height="0" style="position:absolute"><defs>
-  <g id="stag" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- minimal nest -->
-    <path d="M25 67 Q50 82 75 67"/>
-    <path d="M31 71 Q50 79 69 71"/>
-    <path d="M34 64 Q50 73 66 64"/>
-    <!-- branch + leaves -->
-    <path d="M22 63 Q38 54 50 58 Q62 53 78 62"/>
-    <path d="M31 57 Q25 48 18 51 Q24 58 31 57"/>
-    <path d="M69 57 Q75 48 82 51 Q76 58 69 57"/>
-    <path d="M44 55 Q39 47 32 49 Q38 56 44 55"/>
-    <path d="M56 55 Q61 47 68 49 Q62 56 56 55"/>
-    <!-- mother bird -->
-    <path d="M57 44 Q72 35 83 40 Q74 46 65 50 Q57 55 50 61"/>
-    <path d="M58 44 Q50 38 42 43 Q50 45 57 44"/>
-    <path d="M63 50 Q67 55 74 55"/>
-    <!-- chicks -->
-    <path d="M43 63 Q45 57 50 63"/>
-    <path d="M51 64 Q54 57 59 64"/>
+  <g id="stag" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- double-ring crest frame -->
+    <circle cx="50" cy="50" r="46"/>
+    <circle cx="50" cy="50" r="42"/>
+
+    <!-- leafy sapling arcing up the left -->
+    <path d="M37 64 Q30 53 28 40" stroke-width="1.8"/>
+    <path d="M28 47 Q22 45 22 39 Q28 41 28 47 Z" fill="currentColor" stroke="none"/>
+    <path d="M29 40 Q34 36 34 30 Q28 33 29 40 Z" fill="currentColor" stroke="none"/>
+    <path d="M27 41 Q22 38 23 33 Q28 36 27 41 Z" fill="currentColor" stroke="none"/>
+
+    <!-- mother bird: filled silhouette, head-down, descending from upper right -->
+    <path d="M45 55 Q43 49 47 45 Q53 38 63 35 Q70 33 75 30
+             Q71 38 64 41 Q72 42 77 47 Q68 48 60 47
+             Q53 48 49 53 Q47 56 45 55 Z" fill="currentColor" stroke="none"/>
+    <!-- beak reaching down to feed -->
+    <path d="M45 55 L43 60 L47 57 Z" fill="currentColor" stroke="none"/>
+    <!-- wing detail line -->
+    <path d="M55 44 Q62 44 69 46" stroke-width="1.4"/>
+    <!-- eye -->
+    <circle cx="60" cy="40" r="1.1" fill="#15201a" stroke="none"/>
+
+    <!-- nest cradle with two chicks -->
+    <path d="M35 61 Q50 73 65 61"/>
+    <path d="M34 60 Q50 66 66 60" stroke-width="1.5"/>
+    <path d="M40 63 L44 65 M48 64 L52 65 M56 63 L60 64" stroke-width="1.3"/>
+    <path d="M45 60 Q45 56 48 56 Q51 56 51 60 Z" fill="currentColor" stroke="none"/>
+    <path d="M51 60 Q51 56 54 56 Q57 56 57 60 Z" fill="currentColor" stroke="none"/>
   </g>
 </defs></svg>
 
