@@ -306,8 +306,8 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Venado <i>·</i> Codorniz Codocana <i>·</i> Res de pastoreo <i>·</i> Sopa de frijol <i>·</i> Café de siempre <i>·</i> Leña de encino <i>·</i></span>
-    <span>Venado <i>·</i> Codorniz Codocana <i>·</i> Res de pastoreo <i>·</i> Sopa de frijol <i>·</i> Café de siempre <i>·</i> Leña de encino <i>·</i></span>
+    <span data-en-html="Venison <i>·</i> Codocana Quail <i>·</i> Pasture-raised beef <i>·</i> Bean soup <i>·</i> Our coffee since day one <i>·</i> Oak wood <i>·</i>">Venado <i>·</i> Codorniz Codocana <i>·</i> Res de pastoreo <i>·</i> Sopa de frijol <i>·</i> Café de siempre <i>·</i> Leña de encino <i>·</i></span>
+    <span data-en-html="Venison <i>·</i> Codocana Quail <i>·</i> Pasture-raised beef <i>·</i> Bean soup <i>·</i> Our coffee since day one <i>·</i> Oak wood <i>·</i>">Venado <i>·</i> Codorniz Codocana <i>·</i> Res de pastoreo <i>·</i> Sopa de frijol <i>·</i> Café de siempre <i>·</i> Leña de encino <i>·</i></span>
   </div>
 </div>
 
@@ -719,19 +719,19 @@
   <svg class="crest" viewBox="0 0 100 100"><use href="#stag"/></svg>
   <div class="brand-f">El Nido</div>
   <div class="links">
-    <a href="#historia">Historia</a>
-    <a href="#cocina">Cocina</a>
-    <a href="#galeria">Galería</a>
-    <a href="#visita">Visítanos</a>
+    <a href="#historia" data-en="History">Historia</a>
+    <a href="#cocina" data-en="Menu">Cocina</a>
+    <a href="#galeria" data-en="Gallery">Galería</a>
+    <a href="#visita" data-en="Visit us">Visítanos</a>
   </div>
-  <small>© <span id="yr"></span> El Nido · Rosarito, Baja California · Desde 1971</small>
+  <small data-en-html="© <span id=&quot;yr&quot;></span> El Nido · Rosarito, Baja California · Since 1971">© <span id="yr"></span> El Nido · Rosarito, Baja California · Desde 1971</small>
 </footer>
 
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
   // ---- language toggle (ES default, EN via data-en / data-en-html) ----
   (function(){
+    const setYear = () => { const y=document.getElementById('yr'); if(y) y.textContent = new Date().getFullYear(); };
+    setYear();
     const els = document.querySelectorAll('[data-en], [data-en-html]');
     // stash original Spanish on first run
     els.forEach(el=>{
@@ -746,6 +746,7 @@
           el.textContent = lang==='en' ? el.getAttribute('data-en') : el.dataset.es;
         }
       });
+      setYear();
       document.documentElement.lang = lang;
       document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
       try{ localStorage.setItem('elnido_lang', lang); }catch(e){}
