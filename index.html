@@ -91,6 +91,12 @@
   .hero .tag{ font-family:var(--serif); font-style:italic; font-size:var(--step-1); color:var(--muted); max-width:34ch; margin:0 auto 2.4rem;
     opacity:0; transform:translateY(22px); animation:rise 1.1s var(--ease) .6s forwards; }
   .hero .cta{ opacity:0; transform:translateY(20px); animation:rise 1.1s var(--ease) .75s forwards; }
+  .hero-logo{ position:relative; display:inline-block; margin-bottom:1.6rem; opacity:0; transform:translateY(24px) scale(.97); animation:rise 1.2s var(--ease) .2s forwards; }
+  .hero-logo::before{ content:""; position:absolute; inset:-8% -6%; z-index:-1;
+    background:radial-gradient(closest-side, oklch(0.95 0.03 90 / .92), oklch(0.93 0.04 85 / .8) 55%, transparent 78%);
+    filter:blur(2px); }
+  .hero-logo img{ display:block; width:min(82vw, 440px); height:auto;
+    filter:drop-shadow(0 18px 40px oklch(0.10 0.02 150 / .55)); }
   @keyframes rise{ to{ opacity:1; transform:none; } }
   .rule{ width:64px; height:1px; background:var(--brass); margin:0 auto 1.4rem; opacity:.7; }
 
@@ -247,11 +253,7 @@
   <canvas class="embers" id="embers"></canvas>
   <div class="hero-veil"></div>
   <div class="wrap">
-    <svg class="crest" viewBox="0 0 100 100"><use href="#stag"/></svg>
-    <span class="eyebrow" data-en="Rosarito · Baja California · Since 1971">Rosarito · Baja California · Desde 1971</span>
-    <h1>El Nido</h1>
-    <p class="hero-sub">Steak House</p>
-    <p class="tag" data-en="Naturally unique — regional Baja cuisine, fired over oak since 1971.">Naturalmente único — cocina regional de Baja, asada con leña de encino desde 1971.</p>
+    <div class="hero-logo"><img src="assets/logo-trans.png" alt="El Nido Steak House — Rosarito B.C. México, fundado en 1971, Naturalmente Único"></div>
     <div class="cta"><a href="#visita" class="btn" data-en="Reserve a table">Reservar una mesa</a></div>
   </div>
 </header>
