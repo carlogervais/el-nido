@@ -207,17 +207,10 @@
   .food-strip figure{ position:relative; overflow:hidden; border-radius:2px; aspect-ratio:4/3; }
   .food-strip img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.96) brightness(.97); transition:transform 5s var(--ease); }
   .food-strip figure:hover img{ transform:scale(1.06); }
-  @media(max-width:680px){ .food-strip{ grid-template-columns:1fr; } }
-  /* MENU PHOTO — swaps with active tab */
-  .menu-photo{ position:relative; overflow:hidden; border-radius:2px; max-width:760px; margin:0 auto 2.4rem; aspect-ratio:16/9;
-    transition:opacity .5s var(--ease), max-height .5s var(--ease); }
-  .menu-photo.is-hidden{ opacity:0; max-height:0; margin-bottom:0; pointer-events:none; }
-  .menu-photo img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.96) brightness(.96); transition:opacity .4s var(--ease), transform 6s var(--ease); }
-  .menu-photo:hover img{ transform:scale(1.05); }
-  .menu-photo.swapping img{ opacity:0; }
-  .menu-photo figcaption{ position:absolute; left:1.1rem; bottom:.95rem; z-index:2; font-family:var(--serif); font-style:italic; font-size:var(--step-0);
+  .food-strip figure::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 58%, oklch(0.22 0.03 145 / .52)); pointer-events:none; }
+  .food-strip figcaption{ position:absolute; left:1.1rem; bottom:.9rem; z-index:2; font-family:var(--serif); font-style:italic; font-size:var(--step-0);
     color:oklch(0.97 0.02 90); text-shadow:0 1px 14px oklch(0.15 0.02 145 / .9); }
-  .menu-photo::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, oklch(0.22 0.03 145 / .5)); pointer-events:none; }
+  @media(max-width:680px){ .food-strip{ grid-template-columns:1fr; } }
   .visit{ background:var(--forest); color:var(--cream-text); text-align:center; }
   .visit .sec-head h2{ color:var(--cream); }
   .visit .sec-head .eyebrow{ color:var(--gold-soft); }
@@ -338,10 +331,10 @@
       <h2 data-en="The menu">El menú</h2>
     </div>
 
-    <figure class="menu-photo reveal">
-      <img id="menuPhoto" src="assets/gallery/g-steak.jpg" alt="Corte a la parrilla con huevo, frijoles y salsa en El Nido">
-      <figcaption id="menuPhotoCap" data-en="Ribeye, grilled over oak">Rib eye, asado con leña de encino</figcaption>
-    </figure>
+    <div class="food-strip reveal">
+      <figure><img src="assets/gallery/g-steak.jpg" alt="Rib eye y huevos asados con leña de encino en El Nido"><figcaption data-en="Ribeye and eggs, oak-grilled">Rib eye y huevos, a la leña</figcaption></figure>
+      <figure><img src="assets/gallery/g-machaca.jpg" alt="Machaca con huevo, frijoles y papas en El Nido"><figcaption data-en="Machaca with egg">Machaca con huevo</figcaption></figure>
+    </div>
 
     <div class="menu-tabs" role="tablist">
       <button class="menu-tab active" data-tab="parrilla" data-en="From the Grill">De la Parrilla</button>
@@ -582,37 +575,12 @@
   // menu tabs
   const tabs = document.querySelectorAll('.menu-tab');
   const panels = document.querySelectorAll('.menu-panel');
-  // photos keyed to the tab that has a real dish shot
-  const menuPhotos = {
-    desayuno:  { src:'assets/gallery/g-steak.jpg',   es:'Rib eye y huevos, asado con leña', en:'Ribeye and eggs, oak-grilled' },
-    mexicanos: { src:'assets/gallery/g-machaca.jpg', es:'Machaca con huevo',                en:'Machaca with egg' }
-  };
-  const mPhoto = document.querySelector('.menu-photo');
-  const mImg   = document.getElementById('menuPhoto');
-  const mCap   = document.getElementById('menuPhotoCap');
-  function setMenuPhoto(tab){
-    const p = menuPhotos[tab];
-    if(!p){ mPhoto.classList.add('is-hidden'); return; }
-    const lang = document.documentElement.lang === 'en' ? 'en' : 'es';
-    mPhoto.classList.add('swapping');
-    setTimeout(()=>{
-      mImg.src = p.src;
-      mCap.dataset.es = p.es;
-      mCap.setAttribute('data-en', p.en);
-      mCap.textContent = p[lang];
-      mPhoto.classList.remove('is-hidden');
-      mPhoto.classList.remove('swapping');
-    }, 220);
-  }
   tabs.forEach(t=>t.addEventListener('click', ()=>{
     tabs.forEach(x=>x.classList.remove('active'));
     panels.forEach(p=>p.classList.remove('active'));
     t.classList.add('active');
     document.getElementById(t.dataset.tab).classList.add('active');
-    setMenuPhoto(t.dataset.tab);
   }));
-  // initial state — active tab on load
-  setMenuPhoto((document.querySelector('.menu-tab.active')||{}).dataset?.tab);
   const nav = document.getElementById('nav');
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
