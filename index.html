@@ -184,17 +184,25 @@
   .m-note{ text-align:center; color:var(--muted); font-style:italic; font-family:var(--serif); font-size:var(--step-0); margin-top:2.4rem; }
   .menu-feature{ text-align:center; font-family:var(--serif); font-style:italic; color:var(--muted); margin-bottom:2.4rem; font-size:var(--step-0); }
 
-  /* GALLERY */
-  .gallery{ display:grid; grid-template-columns:1.4fr 1fr; grid-template-rows:1fr 1fr; gap:14px; height:min(86vh,720px); }
-  .gallery figure{ position:relative; overflow:hidden; }
-  .gallery .g1{ grid-row:1/3; }
-  .gallery img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1.2s var(--ease); filter:saturate(.92) brightness(.92); }
-  .gallery figure:hover img{ transform:scale(1.06); }
-  .gallery figcaption{ position:absolute; left:1rem; bottom:1rem; font-family:var(--serif); font-style:italic; font-size:var(--step-0);
-    color:var(--ink); text-shadow:0 1px 12px #000; }
-  @media(max-width:760px){ .gallery{ grid-template-columns:1fr; grid-template-rows:repeat(3,240px); height:auto; } .gallery .g1{ grid-row:auto; } }
+  /* GALLERY — editorial mosaic */
+  .gallery{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:200px; gap:14px; }
+  .gallery figure{ position:relative; overflow:hidden; border-radius:2px; }
+  .gallery .g-tall{ grid-row:span 2; }
+  .gallery .g-wide{ grid-column:span 2; }
+  .gallery .g-big{ grid-column:span 2; grid-row:span 2; }
+  .gallery img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform 1.3s var(--ease), filter .6s; filter:saturate(.94) brightness(.97); }
+  .gallery figure::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, oklch(0.22 0.03 145 / .55)); opacity:.85; transition:opacity .5s; pointer-events:none; }
+  .gallery figure:hover img{ transform:scale(1.07); filter:saturate(1) brightness(1); }
+  .gallery figcaption{ position:absolute; left:1.1rem; bottom:.95rem; z-index:2; font-family:var(--serif); font-style:italic; font-size:var(--step-0);
+    color:oklch(0.97 0.02 90); text-shadow:0 1px 14px oklch(0.15 0.02 145 / .9); }
+  @media(max-width:760px){ .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:150px; }
+    .gallery .g-big{ grid-column:span 2; } .gallery .g-wide{ grid-column:span 2; } .gallery .g-tall{ grid-row:span 1; } }
 
   /* VISIT */
+  .sec-banner{ position:relative; overflow:hidden; border-radius:2px; margin:0 auto 2.6rem; max-width:1000px; aspect-ratio:21/9; }
+  .sec-banner img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.95) brightness(.96); transition:transform 6s var(--ease); }
+  .sec-banner:hover img{ transform:scale(1.05); }
+  .sec-banner::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, oklch(0.22 0.03 145 / .12), oklch(0.22 0.03 145 / .42)); pointer-events:none; }
   .visit{ background:var(--forest); color:var(--cream-text); text-align:center; }
   .visit .sec-head h2{ color:var(--cream); }
   .visit .sec-head .eyebrow{ color:var(--gold-soft); }
@@ -314,6 +322,8 @@
       <span class="eyebrow" data-en="Our menu">Nuestra carta</span>
       <h2 data-en="The menu">El menú</h2>
     </div>
+
+    <figure class="sec-banner reveal"><img src="assets/gallery/g-steak.jpg" alt="Corte a la parrilla con huevo, frijoles y salsa en El Nido"></figure>
 
     <div class="menu-tabs" role="tablist">
       <button class="menu-tab active" data-tab="parrilla" data-en="From the Grill">De la Parrilla</button>
@@ -482,9 +492,12 @@
   </div>
   <div class="wrap reveal">
     <div class="gallery">
-      <figure class="g1"><img src="assets/gal-ceiling.jpg" alt="Techo de follaje verde de El Nido"><figcaption data-en="The foliage that gives us our name">El follaje que nos da nombre</figcaption></figure>
-      <figure><img src="assets/gal-brick.jpg" alt="Muro de ladrillo y decoración de El Nido"><figcaption data-en="Brick and memory">Ladrillo y memoria</figcaption></figure>
-      <figure><img src="assets/gal-antiques.jpg" alt="Antigüedades y detalles de El Nido"><figcaption data-en="Every corner, a story">Cada rincón, una historia</figcaption></figure>
+      <figure class="g-big"><img src="assets/gallery/g-atrium.jpg" alt="Atrio principal de El Nido con domo de caña y rueda de carreta"><figcaption data-en="Half a century under the woven dome">Medio siglo bajo el domo tejido</figcaption></figure>
+      <figure class="g-tall"><img src="assets/gallery/g-bear.jpg" alt="Oso tallado en madera y rincón de antigüedades de El Nido"><figcaption data-en="Every corner, a story">Cada rincón, una historia</figcaption></figure>
+      <figure><img src="assets/gallery/g-canopy.jpg" alt="Domo de caña y follaje verde de El Nido"><figcaption data-en="The foliage that gives us our name">El follaje que nos da nombre</figcaption></figure>
+      <figure><img src="assets/gallery/g-bar.jpg" alt="La barra redonda de El Nido"><figcaption data-en="The bar, since 1971">La barra, desde 1971</figcaption></figure>
+      <figure class="g-wide"><img src="assets/gallery/g-altar.jpg" alt="Centro de ladrillo, venado y rueda de carreta en El Nido"><figcaption data-en="Wood, brick and memory">Madera, ladrillo y memoria</figcaption></figure>
+      <figure><img src="assets/gallery/g-antiques.jpg" alt="Vitrinas de antigüedades de El Nido"><figcaption data-en="Treasures behind glass">Tesoros tras el cristal</figcaption></figure>
     </div>
   </div>
 </section>
@@ -495,6 +508,7 @@
       <span class="eyebrow" data-en="Visit us">Visítanos</span>
       <h2 data-en="We are waiting for you">Te esperamos</h2>
     </div>
+    <figure class="sec-banner reveal"><img src="assets/gallery/g-entrance.jpg" alt="Arco de ladrillo a la entrada de El Nido en Rosarito"></figure>
     <div class="grid">
       <div><div class="k" data-en="Where">Dónde</div><div class="v">Rosarito, B.C.<small data-en="Add the exact address and Google Maps link here.">Agrega aquí la dirección exacta y el enlace a Google Maps.</small></div></div>
       <div><div class="k" data-en="Hours">Horario</div><div class="v"><span data-en="Every day">Todos los días</span><small data-en="Add the real opening hours here.">Coloca aquí los horarios reales de El Nido.</small></div></div>
