@@ -181,7 +181,7 @@
   .m-item .dots{ flex:1 1 auto; border-bottom:1px dotted oklch(0.55 0.05 95 / .5); position:relative; top:-.35rem; min-width:1.5rem; }
   .m-item .pr{ font-family:var(--sans); color:var(--brass); font-variant-numeric:tabular-nums; white-space:nowrap; }
   .m-item.full .nm{ white-space:normal; }
-  #cava .m-item .nm{ white-space:normal; }
+  #cava .m-item .nm, #bebidas .m-item .nm{ white-space:normal; }
   .m-desc{ color:var(--muted); font-size:var(--step--1); line-height:1.55; margin:-.15rem 0 .4rem; max-width:54ch; }
   .m-note{ text-align:center; color:var(--muted); font-style:italic; font-family:var(--serif); font-size:var(--step-0); margin-top:2.4rem; }
   .menu-feature{ text-align:center; font-family:var(--serif); font-style:italic; color:var(--muted); margin-bottom:2.4rem; font-size:var(--step-0); }
@@ -348,6 +348,7 @@
       <button class="menu-tab" data-tab="desayuno" data-en="Breakfast">Desayuno</button>
       <button class="menu-tab" data-tab="postres" data-en="Desserts">Postres</button>
       <button class="menu-tab" data-tab="cava" data-en="Regional Wine">Vino de la Región</button>
+      <button class="menu-tab" data-tab="bebidas" data-en="Drinks &amp; Sodas">Bebidas &amp; Refrescos</button>
     </div>
 
     <!-- DE LA PARRILLA -->
@@ -601,6 +602,78 @@
       <div class="m-item"><span class="nm">Merlot Reservado</span><span class="dots"></span><span class="pr">$570</span></div>
       <div class="m-prod" data-en="Glass">Copa</div>
       <div class="m-item"><span class="nm">Cabernet o Merlot · Concha y Toro</span><span class="dots"></span><span class="pr">$173</span></div>
+    </div>
+
+    <!-- BEBIDAS & REFRESCOS -->
+    <div class="menu-panel" id="bebidas">
+      <p class="menu-feature" data-en="Prices in pesos.">Precios en pesos.</p>
+
+      <div class="m-cat" data-en="Drinks &amp; sodas">Bebidas &amp; Refrescos</div>
+      <div class="m-item"><span class="nm">Refrescos, agua fresca, jugos, leche, chocolate frío o, té helado, botella de agua</span><span class="dots"></span><span class="pr">$70</span></div>
+      <div class="m-item"><span class="nm">Jugo de naranja natural</span><span class="dots"></span><span class="pr">$75</span></div>
+      <div class="m-item"><span class="nm">Jarra de jugo de naranja natural</span><span class="dots"></span><span class="pr">$299</span></div>
+      <div class="m-item"><span class="nm">Jarra de agua fresca</span><span class="dots"></span><span class="pr">$218</span></div>
+      <div class="m-item"><span class="nm">Café americano</span><span class="dots"></span><span class="pr">$66</span></div>
+
+      <div class="m-cat" data-en="Beer">Cerveza</div>
+      <div class="m-item"><span class="nm">Nacional</span><span class="dots"></span><span class="pr">$98</span></div>
+      <p class="m-desc" data-en="Tecate, Tecate Light, Ultra, Bohemia, Dos Equis, Indio.">Tecate, Tecate Light, Ultra, Bohemia, Dos Equis, Indio.</p>
+      <div class="m-item"><span class="nm">Chabela</span><span class="dots"></span><span class="pr">$170</span></div>
+      <p class="m-desc" data-en="Beer of your choice with clamato, lime and sauces.">Cerveza de su elección con clamato, limón y salsas.</p>
+
+      <div class="m-cat" data-en="Margarita">Margarita</div>
+      <div class="m-item"><span class="nm">Margarita de sabor</span><span class="dots"></span><span class="pr">$213</span></div>
+      <p class="m-desc" data-en="Lime, strawberry, tamarind, banana, mango (in season).">Limón, fresa, tamarindo, plátano, mango (en temporada).</p>
+      <div class="m-item"><span class="nm">Margarita en las rocas</span><span class="dots"></span><span class="pr">$228</span></div>
+      <div class="m-item"><span class="nm">Margarita con Don Julio 70</span><span class="dots"></span><span class="pr">$444</span></div>
+      <div class="m-item"><span class="nm">Margarita con tequila a escoger</span><span class="dots"></span><span class="pr">$285</span></div>
+      <p class="m-desc" data-en="Herradura, 3 Generaciones, Don Julio, Tradicional, Cazadores, Cuervo 1800, Centenario, Jimador, Hornitos.">Herradura, 3 Generaciones, Don Julio, Tradicional, Cazadores, Cuervo 1800, Centenario, Jimador, Hornitos.</p>
+      <div class="m-item"><span class="nm">Margarita Cadillac</span><span class="dots"></span><span class="pr">$360</span></div>
+      <div class="m-item"><span class="nm">Margarita Cadillac c/Don Julio 70</span><span class="dots"></span><span class="pr">$499</span></div>
+      <div class="m-item"><span class="nm">Margarita Cadillac con tequila a escoger</span><span class="dots"></span><span class="pr">$389</span></div>
+      <p class="m-desc" data-en="Herradura, 3 Generaciones, Don Julio, Tradicional, Cuervo 1800, Centenario, Patrón, Cazadores, Jimador, Hornitos.">Herradura, 3 Generaciones, Don Julio, Tradicional, Cuervo 1800, Centenario, Patrón, Cazadores, Jimador, Hornitos.</p>
+
+      <div class="m-cat" data-en="Tequila">Tequila</div>
+      <div class="m-item"><span class="nm">Don Julio 70, Herradura Ultra, 1800 Cristalino</span><span class="dots"></span><span class="pr">$382</span></div>
+      <div class="m-item"><span class="nm">Tequila a escoger</span><span class="dots"></span><span class="pr">$221</span></div>
+      <p class="m-desc" data-en="Herradura, 3 Generaciones, Don Julio, Cuervo 1800, Centenario, Tradicional, Cazadores, Jimador, Hornito.">Herradura, 3 Generaciones, Don Julio, Cuervo 1800, Centenario, Tradicional, Cazadores, Jimador, Hornito.</p>
+      <div class="m-item"><span class="nm">Orendain</span><span class="dots"></span><span class="pr">$144</span></div>
+
+      <div class="m-cat" data-en="Creams">Cremas</div>
+      <div class="m-item"><span class="nm">Baileys, Licor 43, Kahlúa, Anís, Amaretto, Campari, Menta, Midori</span><span class="dots"></span><span class="pr">$213</span></div>
+
+      <div class="m-cat" data-en="Cocktail">Cóctel</div>
+      <div class="m-item"><span class="nm">Bebidas preparadas</span><span class="dots"></span><span class="pr">$227</span></div>
+      <p class="m-desc" data-en="Piña colada, mojito, clamato, may tay, zombie, bloody mary, mimosa, sangría, old fashion, adios.">Piña colada, mojito, clamato, may tay, zombie, bloody mary, mimosa, sangría, old fashion, adios.</p>
+      <div class="m-item"><span class="nm">Jarra mimosa</span><span class="dots"></span><span class="pr">$616</span></div>
+      <div class="m-item"><span class="nm">Jarra sangría</span><span class="dots"></span><span class="pr">$616</span></div>
+      <div class="m-item"><span class="nm">Mezcalita</span><span class="dots"></span><span class="pr">$360</span></div>
+      <div class="m-item"><span class="nm">Medias de seda</span><span class="dots"></span><span class="pr">$227</span></div>
+      <p class="m-desc" data-en="Piña, tamarind, jamaica.">Piña, tamarindo, jamaica.</p>
+
+      <div class="m-cat" data-en="Mezcal">Mezcal</div>
+      <div class="m-item"><span class="nm">400 Conejos reposado o blanco</span><span class="dots"></span><span class="pr">$221</span></div>
+
+      <div class="m-cat" data-en="Vodka">Vodka</div>
+      <div class="m-item"><span class="nm">Grey Goose, Absolut, Tito's, Wyborowa, Stolichnaya, Smirnoff</span><span class="dots"></span><span class="pr">$244</span></div>
+      <div class="m-item"><span class="nm">Oso Negro</span><span class="dots"></span><span class="pr">$146</span></div>
+
+      <div class="m-cat" data-en="Gin">Ginebra</div>
+      <div class="m-item"><span class="nm">Tanqueray, Beefeater</span><span class="dots"></span><span class="pr">$244</span></div>
+      <div class="m-item"><span class="nm">Oso Negro</span><span class="dots"></span><span class="pr">$146</span></div>
+
+      <div class="m-cat" data-en="Cognac">Cognac</div>
+      <div class="m-item"><span class="nm">Martell, Courvoisier, V.S.</span><span class="dots"></span><span class="pr">$260</span></div>
+
+      <div class="m-cat" data-en="Rum">Ron</div>
+      <div class="m-item"><span class="nm">Bacardi, Captain Morgan, Appleton, Malibu</span><span class="dots"></span><span class="pr">$143</span></div>
+
+      <div class="m-cat" data-en="Brandy">Brandy</div>
+      <div class="m-item"><span class="nm">Torres 10, Azteca de Oro, Presidente, Don Pedro</span><span class="dots"></span><span class="pr">$214</span></div>
+
+      <div class="m-cat" data-en="Scotch or Whiskys">Escoces o Whiskys</div>
+      <div class="m-item"><span class="nm">Buchannans, Chivas Regal, Crown Royal, Black Label</span><span class="dots"></span><span class="pr">$291</span></div>
+      <div class="m-item"><span class="nm">Jack Daniels, J&amp;B, Jim Beam, Passport</span><span class="dots"></span><span class="pr">$275</span></div>
     </div>
   </div>
 </section>
