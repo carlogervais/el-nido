@@ -218,6 +218,8 @@
   .visit .k{ font-size:var(--step--1); letter-spacing:.2em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:.7rem; }
   .visit .v{ font-family:var(--serif); font-size:var(--step-1); color:var(--cream); }
   .visit .v small{ display:block; font-family:var(--sans); font-size:var(--step--1); color:var(--cream-muted); margin-top:.3rem; line-height:1.5; }
+  .visit a{ color:inherit; text-decoration:none; }
+  .visit .v small a{ color:var(--gold-soft); border-bottom:1px solid oklch(0.82 0.10 85 / .45); }
   .visit .btn{ color:var(--gold-soft); border-color:var(--gold-soft); }
   .visit .btn:hover{ background:var(--gold-soft); color:var(--forest-deep); }
   @media(max-width:680px){ .visit .grid{ grid-template-columns:1fr; gap:2rem; } }
@@ -523,11 +525,11 @@
     </div>
     <figure class="sec-banner reveal"><img src="assets/gallery/g-entrance.jpg" alt="Arco de ladrillo a la entrada de El Nido en Rosarito"></figure>
     <div class="grid">
-      <div><div class="k" data-en="Where">Dónde</div><div class="v">Rosarito, B.C.<small data-en="Add the exact address and Google Maps link here.">Agrega aquí la dirección exacta y el enlace a Google Maps.</small></div></div>
-      <div><div class="k" data-en="Hours">Horario</div><div class="v"><span data-en="Every day">Todos los días</span><small data-en="Add the real opening hours here.">Coloca aquí los horarios reales de El Nido.</small></div></div>
-      <div><div class="k" data-en="Reservations">Reservas</div><div class="v"><span data-en="Gladly">Con gusto</span><small data-en="Add the phone / WhatsApp for reservations here.">Agrega aquí el teléfono / WhatsApp para reservar.</small></div></div>
+      <div><div class="k" data-en="Where">Dónde</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=Boulevard%20Benito%20Ju%C3%A1rez%20Garc%C3%ADa%2067%2C%20Centro%20Carretera%2C%2022700%20Rosarito%2C%20B.C.%2C%20Mexico" target="_blank" rel="noopener">Boulevard Benito Juárez García 67</a><small data-en-html="Centro Carretera · 22700 Rosarito, B.C. · Mexico<br><a href=&quot;https://www.google.com/maps/search/?api=1&amp;query=Boulevard%20Benito%20Ju%C3%A1rez%20Garc%C3%ADa%2067%2C%20Centro%20Carretera%2C%2022700%20Rosarito%2C%20B.C.%2C%20Mexico&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Open in Google Maps</a>">Centro Carretera · 22700 Rosarito, B.C. · México<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Boulevard%20Benito%20Ju%C3%A1rez%20Garc%C3%ADa%2067%2C%20Centro%20Carretera%2C%2022700%20Rosarito%2C%20B.C.%2C%20Mexico" target="_blank" rel="noopener">Abrir en Google Maps</a></small></div></div>
+      <div><div class="k" data-en="Hours">Horario</div><div class="v"><span data-en="Every day">Todos los días</span><small data-en="Confirmar horario antes de visitar.">Confirmar horario antes de visitar.</small></div></div>
+      <div><div class="k" data-en="Reservations">Reservas</div><div class="v"><a href="tel:+526616121430">+52 661 612 1430</a><small data-en-html="Call or send a WhatsApp for reservations.">Llama o manda WhatsApp para reservar.</small></div></div>
     </div>
-    <a href="#" class="btn" data-en="Call / WhatsApp">Llamar / WhatsApp</a>
+    <a href="https://wa.me/526616121430" target="_blank" rel="noopener" class="btn" data-en="WhatsApp / Reserve">WhatsApp / Reservar</a>
   </div>
 </section>
 
