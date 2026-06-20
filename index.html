@@ -93,7 +93,7 @@
     0%{ transform:scale(1.12) translate(0,0); }
     100%{ transform:scale(1.22) translate(-2.5%, -2%); }
   }
-  .embers{ display:none; }
+  .embers{ position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:50; }
   .hero-veil{ position:absolute; inset:0;
     background:radial-gradient(ellipse 90% 70% at 50% 38%, oklch(0.975 0.018 90), oklch(0.955 0.022 88) 60%, oklch(0.935 0.026 86) 100%); }
   .hero .wrap{ position:relative; z-index:2; }
@@ -238,6 +238,7 @@
 </style>
 </head>
 <body>
+<canvas class="embers" id="embers"></canvas>
 
 <!-- Refined El Nido crest: filled bird descending to nest, leaf sprig, double-ring frame -->
 <svg width="0" height="0" style="position:absolute"><defs>
@@ -288,7 +289,6 @@
 
 <header class="hero" id="top">
   <div class="hero-img"></div>
-  <canvas class="embers" id="embers"></canvas>
   <div class="hero-veil"></div>
   <div class="wrap">
     <div class="hero-logo"><img src="assets/logo-trans.png" alt="El Nido Steak House — Rosarito B.C. México, fundado en 1971, Naturalmente Único"></div>
@@ -782,12 +782,11 @@
     const id=a.getAttribute('href'); if(id.length>1){ const t=document.querySelector(id); if(t){ ev.preventDefault(); t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});} }
   }));
 
-  // floating embers / dust motes in hero
+  // floating gold dust motes — site-wide ambient layer
   if(!reduce){
     const cv=document.getElementById('embers'), cx=cv.getContext('2d'); let W,H,parts;
-    const hero=document.querySelector('.hero');
-    function size(){ W=cv.width=hero.offsetWidth; H=cv.height=hero.offsetHeight;
-      parts=Array.from({length:Math.min(46, Math.round(W/26))},()=>({
+    function size(){ W=cv.width=innerWidth; H=cv.height=innerHeight;
+      parts=Array.from({length:Math.min(64, Math.round(W/24))},()=>({
         x:Math.random()*W, y:Math.random()*H, r:Math.random()*1.8+0.4,
         sp:Math.random()*0.4+0.15, dx:(Math.random()-0.5)*0.25, a:Math.random()*0.5+0.2, tw:Math.random()*Math.PI*2 })); }
     size(); addEventListener('resize', size, {passive:true});
